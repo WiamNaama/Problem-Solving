@@ -1,0 +1,27 @@
+
+#include<iostream>
+
+using namespace std;
+
+
+ void TeamSolver(int n){
+     int x,y,z,sure=0,ans=0;
+     for(int i=0; i<n;i++){
+        cin>>x>>y>>z;
+        sure=x+y+z;
+        if(sure >=2){
+            ans+=1;
+        }
+        sure=0;
+     }
+     cout<<ans;
+
+ }
+
+int main(){
+    int n;
+    cin>>n;
+    TeamSolver(n);
+    return 0;
+
+}

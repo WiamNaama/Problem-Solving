@@ -1,0 +1,42 @@
+
+#include<iostream>
+#include<string>
+
+using namespace std;
+
+
+  void wordSolver(string s){
+    int lowerCount=0;
+    bool lowerOrUpper=0;
+
+  //Count the number of lower case letters.
+   for(int i=0;i<s.size();i++){
+        if(islower(s[i]))
+           lowerCount+=1;
+   }
+
+   if(lowerCount >= (s.size()-lowerCount)){
+     lowerOrUpper=1;
+   }
+   else{
+    lowerOrUpper=0;
+   }
+
+   for(int i=0;i<s.size();i++){
+     if(lowerOrUpper==1){
+        s[i]=tolower(s[i]);
+     }
+     else{
+        s[i]=toupper(s[i]);
+     }
+   }
+   cout<<s;
+ }
+
+int main(){
+    string s;
+    cin>>s;
+    wordSolver(s);
+    return 0;
+
+}

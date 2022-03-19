@@ -1,0 +1,23 @@
+
+#include<iostream>
+using namespace std;
+
+void solution(int c,int v0,int v1,int a ,int l ){
+    int pos =v0, dayCounter=1,add=v0;
+
+    while(pos<c){
+       add=min(v1,add+a);
+       pos+=add-l;
+        ++dayCounter;
+    }
+    cout<<dayCounter<<endl;
+
+   }
+
+
+int main(){
+    int c,v0,v1,a,l;
+    cin>>c>>v0>>v1>>a>>l;
+    solution(c,v0,v1,a,l);
+    return 0;
+}

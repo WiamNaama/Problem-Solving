@@ -1,0 +1,36 @@
+
+#include<iostream>
+#include<string>
+using namespace std;
+
+
+ void antonAndDanikSolver(int n,string s){
+     int antonCounter=0;
+     for(int i=0;i<s.length();i++){
+        if (s[i]=='A'){
+                antonCounter+=1;
+
+        }
+     }
+     if(antonCounter > n-antonCounter){
+        cout<<"Anton";
+     }
+     if(antonCounter < n-antonCounter){
+        cout<<"Danik";
+     }
+     if(antonCounter == n-antonCounter){
+        cout <<"Friendship";
+     }
+
+ }
+
+
+int main(){
+    int n;
+    string s;
+    cin>>n>>s;
+    antonAndDanikSolver(n,s);
+
+    return 0;
+
+}

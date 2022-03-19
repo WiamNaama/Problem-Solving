@@ -1,0 +1,26 @@
+
+#include<iostream>
+#include<string>
+
+using namespace std;
+
+void solution(int n,string x,string y){
+    string a,b;
+    while(n--){
+        cin>>a>>b;
+        if(x==a)
+            x=b;
+        else
+           y=b;
+     cout<<x << " "<<y<<endl;
+    }
+}
+int main(){
+    string x,y;
+    int n;
+    cin>>x>>y;
+    cout<<x<< " "<<y<<endl;
+    cin>>n;
+    solution(n,x,y);
+    return 0;
+}

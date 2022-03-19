@@ -1,0 +1,48 @@
+
+#include<iostream>
+#include<vector>
+
+using namespace std;
+
+vector<int> garden;
+void solution(int n){
+    int maxRec=1,sumOfrectangel=1;
+    for(int i=0;i<n;i++){
+            //Search in right.
+            for(int j=i;j<n-1;j++){
+                if(garden[j]>=garden[j+1]){
+                    sumOfrectangel++;}
+                else{
+                    break;
+                }
+
+            }
+          //Search in left.
+            for(int k=i;k>0;k--){
+                if(garden[k]>=garden[k-1]){
+                    sumOfrectangel++;}
+                else{
+                    break;
+                }
+            }
+      if(sumOfrectangel >maxRec){
+        maxRec=sumOfrectangel;
+      }
+      sumOfrectangel=1;
+
+
+    }
+    cout<<maxRec;
+
+   }
+
+int main(){
+    int n,x;
+    cin>>n;
+    for(int i=0;i<n;i++){
+     cin>>x;
+     garden.push_back(x);
+    }
+    solution(n);
+    return 0;
+}

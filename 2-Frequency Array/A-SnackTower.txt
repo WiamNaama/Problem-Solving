@@ -1,0 +1,46 @@
+
+#include<iostream>
+#include<vector>
+
+
+using namespace std;
+
+vector<int>A;
+
+ void solution(int items){
+    int n =A.size();
+    vector<int>counter(items+1);
+    for(int i=0;i<n;i++){
+        if(items ==A[i]){
+            counter[A[i]]=1;
+            for(int i=items;i>0;i--){
+                if(counter[i]==1){
+                     items--;
+                     cout<<i<<" ";
+                }
+                else
+                    break;
+
+            }
+        }
+        else{
+          cout<<endl;
+          counter[A[i]]=1;
+
+        }
+
+    }
+
+}
+
+int main(){
+    int items,y;
+    cin>>items;
+    for(int i=0;i<items;i++){
+        cin>>y;
+        A.push_back(y);
+    }
+    solution(items);
+    return 0;
+
+}

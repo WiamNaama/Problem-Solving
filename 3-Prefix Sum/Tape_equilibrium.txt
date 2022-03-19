@@ -1,0 +1,26 @@
+
+#include<iostream>
+#include<vector>
+#include<bits/stdc++.h>
+
+using namespace std;
+
+
+int solution(vector<int>&A){
+    int n =A.size();
+    int maxM=1e9;
+    int ans=0;
+    for(int i=1;i<n;i++){
+        A[i]+=A[i-1];
+        }
+
+    for(int i=1;i<n;i++){
+       ans=abs(A[i-1] -(A[n-1]-A[i-1]));
+       if(ans<maxM){
+        maxM=ans;
+       }
+    }
+    return maxM;
+
+}
+

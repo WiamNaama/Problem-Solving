@@ -1,0 +1,27 @@
+#include <iostream>
+using namespace std;
+
+
+
+void vanyaAndFenceSolver(int n,int h){
+    int a,ans=0;
+    for(int i=0;i<n;i++){
+        cin>>a;
+        if(a>h){
+            ans+=2;
+        }
+        else{
+            ans+=1;
+        }
+    }
+    cout<<ans;
+}
+
+int main()
+{
+    int n,h;
+    cin>>n>>h;
+    vanyaAndFenceSolver(n,h);
+      return 0;
+
+}

@@ -1,0 +1,32 @@
+
+#include<iostream>
+#include<vector>
+#include<bits/stdc++.h>
+
+using namespace std;
+
+vector<int> solution(int N, vector<int>&A){
+    int n =A.size();
+    int maxM=0;
+    int helperB=0;
+    vector<int>counters(N,0);
+
+
+    for(int i=0;i<n;i++){
+        if(A[i]<=N){
+            counters[A[i]-1]=max(helperB,counters[A[i]-1])+1;
+            maxM=max(maxM,counters[A[i]-1]);
+            
+        }
+        else
+            helperB=maxM;
+
+    }
+    for(int i=0;i<N;i++){
+        if(counters[i]<helperB)
+            counters[i]=helperB;
+    }
+    return counters;
+    
+}
+
